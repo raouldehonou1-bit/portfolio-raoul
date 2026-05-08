@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Raoul Dehonou</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: #333; background: #fff; transform: scale(0.95); transform-origin: top left; }
+        .cv-container { display: flex; max-width: 900px; margin: 0 auto; min-height: 100vh; }
+        
+        /* COLONNE GAUCHE */
+        .sidebar { width: 35%; background: #2c3e50; color: #fff; padding: 2rem 1.5rem; }
+        .sidebar h2 { font-size: 0.9rem; letter-spacing: 1px; margin: 1.5rem 0 0.8rem; border-bottom: 1px solid #4a5f7a; padding-bottom: 0.3rem; }
+        .sidebar h2:first-child { margin-top: 0; }
+        .contact-item { font-size: 0.8rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .skill-item { margin-bottom: 1rem; }
+        .skill-name { font-size: 0.8rem; margin-bottom: 0.3rem; }
+        .skill-bar { width: 100%; height: 4px; background: #4a5f7a; }
+        .skill-progress { height: 100%; background: #fff; }
+        .list-item { font-size: 0.8rem; margin-bottom: 0.4rem; }
+        
+        /* COLONNE DROITE */
+        .main { width: 65%; padding: 2rem; }
+        .name { font-size: 1.8rem; font-weight: 700; color: #2c3e50;}
+        .title { font-size: 0.95rem; color: #555; margin-bottom: 1.5rem; }
+        .section-title { font-size: 1rem; font-weight: 700; color: #2c3e50; margin: 1.5rem 0 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .section-title::before { content: "🔹"; font-size: 0.8rem; }
+        .profile-text { font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem; }
+        .experience-item { margin-bottom: 1.2rem; }
+        .exp-header { display: flex; justify-content: space-between; margin-bottom: 0.3rem; }
+        .exp-title { font-weight: 600; font-size: 0.9rem; }
+        .exp-date { font-size: 0.75rem; color: #666; }
+        .exp-desc { font-size: 0.8rem; line-height: 1.5; color: #444; }
+        .formation-item { margin-bottom: 1rem; }
+        
+        @media print {
+            body { -webkit-print-color-adjust: exact; }
+            .cv-container { margin: 0; }
+            @page {size: A4; margin: 0.8cm;}
+            html, body{height: 297mm; width: 210mm;}
+            body{font-size: 9pt;}
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- COLONNE GAUCHE -->
+        <div class="sidebar">
+            <h2>📧 CONTACT</h2>
+            <div class="contact-item">✉️ raouldehonou1@gmail.com</div>
+            <div class="contact-item">📱 +229 01 46 25 83 92</div>
+            <div class="contact-item">📍 Porto-Novo, Bénin</div>
+            
+            <h2>💻 COMPÉTENCES</h2>
+            <div class="skill-item">
+                <div class="skill-name">Développement Web HTML, CSS, JS</div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">Responsive Design</div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 50%"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">Intégration API / Formspree</div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 38%"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">Déploiement Netlify/Vercel</div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 30%"></div></div>
+            </div>
+
+            <h2>🛠️ OUTILS</h2>
+            <div class="list-item">VS Code • Git </div>
+            <div class="list-item">Canva</div>
+            
+            <h2>🌍 LANGUES</h2>
+            <div class="list-item">Français : Courant/Bilingue</div>
+            <div class="list-item">Anglais : Intermédiaire</div>
+            
+            <h2>❤️ INTÉRÊTS</h2>
+            <div class="list-item">Développement de projets personnels•</div>
+            <div class="list-item">Veille Technologique•</div>
+            <div class="list-item">Jeux vidéo • Football</div>
+        </div>
+        <!-- COLONNE DROITE -->
+        <div class="main">
+            <h1 class="name">Raoul Nouessedo DEHONOU</h1>
+            <p class="title">Étudiant en Informatique de Gestion | Développeur web</p>
+            <div style="width: 100%; height: 2px; background: #000000; margin: 20px 0;"></div>
+            <h2 class="section-title">PROFIL</h2>
+            <p class="profile-text">
+                Étudiant en fin de cycle de Licence en informatique de Gestion à l'institut Universitaire de Technologie de L'Université de Parakou,
+                je m'oriente principalement vers le développement de sites vitrines et portfolios qui chargent vite et qui convertissent.
+                Spécialisé HTML/CSS/JS vanilla. J'ai une capacité moyenne à comprendre les besoins métiers et à proposer des solutions informatiques adaptées.
+                Objectif: rendre ton Business visible en ligne.
+            </p>
+
+            <h2 class="section-title">EXPÉRIENCE</h2>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Projet Personnel - Portifolio</div>
+                    <div class="exp-date">Mai 2026</div>
+                </div>
+                <p class="exp-desc">Conception et développement de mon portofolio pesonnel. Animations AOS, 
+                    formulaire Formspree, design mobile-first. Hébergé sur Netlify.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Développeur Frontend - Finanex</div>
+                    <div class="exp-date">Avril 2026</div>
+                </div>
+                <p class="exp-desc">Intégration maquette vers site responsive. Optimisation performance + formulaire de contact WhatsApp. Déploiement Netlify.</p>
+            </div>
+
+             <div class="formation-item">
+                <div class="exp-header">
+                    <div class="exp-title">Parcours Développeur Web Frontend</div>
+                    <div class="exp-date">2026 - Présent</div>
+                </div>
+                <p class="exp-desc">Apprentissage autodidacte + accompagnement mentor. Stack moderne :
+                    HTML5, CSS3, JavaScript, Git, Netlify. Projects clients réels. </p>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Projet Personnel - Site E-commerce</div>
+                    <div class="exp-date">Mars 2026</div>
+                </div>
+                <p class="exp-desc">Développement d'une boutique en ligne responsive avec panier dynamique en JavaScript.
+                    Intégration paiement mobile money et commande via WhatsApp. Catalogue produits filtrable.
+                    Stack : HTML5, CSS3, JavaScript.</p>
+            </div>
+
+            <div class="formation-item">
+                <div class="exp-header">
+                    <div class="exp-title">Project Académique</div>
+                    <div class="exp-date">Février 2026</div>
+                </div>
+                <p class="exp-desc">Mini project Web HTML CSS et PHP : Création de formulaire et envoie de base de données.</p>
+            </div>
+
+            <div class="formation-item">
+                <div class="exp-header">
+                    <div class="exp-title">Project Académique</div>
+                    <div class="exp-date">Janvier 2025</div>
+                </div>
+                <p class="exp-desc">Développement d'un site web Benin Tourisme(HTML,CSS) </p>
+            </div>
+
+            <h2 class="section-title">FORMATION</h2>
+
+            <div class="formation-item">
+                <div class="exp-header">
+                    <div class="exp-title">Licence Informatique de Gestion</div>
+                    <div class="exp-date">Sept 2023 Present</div>
+                </div>
+                <p class="exp-desc">Université de Parakou</p>
+            </div>
+
+            <div class="formation-item">
+                <div class="exp-header">
+                    <div class="exp-title">Baccalauréat Série G2</div>
+                    <div class="exp-date">Juil 2023</div>
+                </div>
+                <p class="exp-desc">Collège Catholique Notre Dame de Lourde de Porto-Novo</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
