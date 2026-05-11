@@ -1847,6 +1847,37 @@ h2 span{
     box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
 }
 
+.btn-visiter:disabled {
+    background: #6b7280 !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+}
+
+.btn-visiter:disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
 .project:hover {
     border: 1px solid #22c55e;
 }
+.btn-visiter{
+    font-size: 13px;
+    text-transform: none;
+    white-space: nowrap;
+    padding: 10px 14px;
+    text-decoration: none;
+}
+
+#services{padding-top: 35px; margin-top: 40px;}
+/* 
+section{
+    position: relative;
+    z-index: 1;
+    isolation: isolate;
+}
+
+#about, #skills, #project{
+    z-index: 5;
+}
+ */
