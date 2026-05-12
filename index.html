@@ -702,14 +702,15 @@
     </div>
     </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
-  </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        AOS.init({
+        duration: 800,
+        once: true
+        });
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -746,81 +747,92 @@
         });
     </script>
 
-<script>
-window.addEventListener('scroll', () => {
-  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = (winScroll / height) * 100;
-  document.querySelector('.scroll-progress').style.width = scrolled + "%";
-});
-</script>
+    <script>
+    window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.querySelector('.scroll-progress').style.width = scrolled + "%";
+    });
+    </script>
 
-<button id="backTop">↑</button>
+    <button id="backTop">↑</button>
 
-<script>
-const backTop = document.getElementById('backTop');
-window.addEventListener('scroll', () => {
-  backTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-});
-backTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-</script>
+    <script>
+    const backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', () => {
+    backTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    backTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const skills = document.querySelectorAll('.skill-progress');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                const width = entry.target.getAttribute('data-width');
-                entry.target.style.width = width;
-            }
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const skills = document.querySelectorAll('.skill-progress');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const width = entry.target.getAttribute('data-width');
+                    entry.target.style.width = width;
+                }
+            });
+        });
+        
+        skills.forEach(skill => {
+            const width = skill.style.width;
+            skill.setAttribute('data-width', width);
+            skill.style.width = '0%';
+            observer.observe(skill);
         });
     });
-    
-    skills.forEach(skill => {
-        const width = skill.style.width;
-        skill.setAttribute('data-width', width);
-        skill.style.width = '0%';
-        observer.observe(skill);
+    </script>
+
+    <script>
+    // === PROTECTION FORMULAIRE ===
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    form.addEventListener('submit', function(e) {
+        const name = this.name.value.trim();
+        const email = this.email.value.trim();
+        const sujet = this.sujet.value.trim();
+        const msg = this.message.value.trim();
+        const regex = /<script|http:\/\/|https:\/\/|www\.|\.ru|\.cn|\.xyz|viagra|casino|xxx/i;
+        if (regex.test(msg) || regex.test(name) || regex.test(sujet)) {
+            e.preventDefault();
+            alert('Message suspect détecté 🚫');
+            return;
+        }
+        const now = Date.now();
+        if (!form.dataset.startTime || now - form.dataset.startTime < 3000) {
+            e.preventDefault();
+            alert('Attends 3s avant d\'envoyer chef 😅');
+            form.dataset.startTime = now;
+            return;
+        }
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Envoi...';
     });
-});
+    form.addEventListener('focusin', function() {
+        if (!this.dataset.startTime) {
+            this.dataset.startTime = Date.now();
+        }
+    });
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R3D7Q710C8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R3D7Q710C8');
 </script>
 
-<script>
-// === PROTECTION FORMULAIRE ===
-const form = document.getElementById('contact-form');
-const submitBtn = document.getElementById('submit-btn');
-form.addEventListener('submit', function(e) {
-    const name = this.name.value.trim();
-    const email = this.email.value.trim();
-    const sujet = this.sujet.value.trim();
-    const msg = this.message.value.trim();
-    const regex = /<script|http:\/\/|https:\/\/|www\.|\.ru|\.cn|\.xyz|viagra|casino|xxx/i;
-    if (regex.test(msg) || regex.test(name) || regex.test(sujet)) {
-        e.preventDefault();
-        alert('Message suspect détecté 🚫');
-        return;
-    }
-    const now = Date.now();
-    if (!form.dataset.startTime || now - form.dataset.startTime < 3000) {
-        e.preventDefault();
-        alert('Attends 3s avant d\'envoyer chef 😅');
-        form.dataset.startTime = now;
-        return;
-    }
-    
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Envoi...';
-});
-form.addEventListener('focusin', function() {
-    if (!this.dataset.startTime) {
-        this.dataset.startTime = Date.now();
-    }
-});
-</script>
 
 </body>
 </html>
